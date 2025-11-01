@@ -28,11 +28,12 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+bun-debug.log*
+.pnpm-debug.log*
+bun.lock
 
-# env files (can opt-in for commiting if needed)
+# env files (can opt-in for committing if needed)
 .env
-liara.json
-migrations
 
 # vercel
 .vercel
@@ -40,3 +41,6 @@ migrations
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+/src/generated/prisma
+prisma/generated
