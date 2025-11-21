@@ -1,0 +1,15 @@
+<svg width="800" height="600" viewBox="0 0 800 600" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1e40af"/>
+      <stop offset="100%" stop-color="#3b82f6"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="600" fill="url(#bg)"/>
+  <text x="400" y="320" font-family="Inter, system-ui, sans-serif" font-size="72" font-weight="700" text-anchor="middle" fill="white" opacity="0.95">
+    Sassfa
+  </text>
+  <circle cx="320" cy="280" r="4" fill="white" opacity="0.6"/>
+  <circle cx="480" cy="280" r="4" fill="white" opacity="0.6"/>
+  <circle cx="400" cy="240" r="3" fill="white" opacity="0.4"/>
+</svg>
