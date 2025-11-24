@@ -29,7 +29,7 @@ export default async function Page() {
     headers: headersList,
   });
 
-  if (!session) redirect("/auth/login");
+  if (!session) redirect("/auth/login?error=session_expired");
 
   const FULL_POST_ACCESS = await auth.api.userHasPermission({
     body: {
