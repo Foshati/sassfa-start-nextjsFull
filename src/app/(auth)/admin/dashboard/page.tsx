@@ -7,7 +7,7 @@ import { UserRoleSelect } from "@/components/auth/user-role-select";
 import { auth } from "@/lib/auth";
 import { headers } from "next/headers";
 import { redirect } from "next/navigation";
-import type { UserRole } from "../../../../../prisma/generated/prisma/client";
+import type { UserRole } from "../../../../../prisma/generated/client";
 
 export default async function Page() {
   const headersList = await headers();
