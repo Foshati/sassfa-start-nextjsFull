@@ -1,18 +1,18 @@
-"use client"
+"use client";
 
-import { cn } from "@/lib/utils"
-import { Button } from "@/components/ui/button"
+import { cn } from "@/lib/utils";
+import { Button } from "@/components/ui/button";
 import {
   Field,
   FieldDescription,
   FieldGroup,
   FieldLabel,
   FieldSeparator,
-} from "@/components/ui/field"
-import { Input } from "@/components/ui/input"
-import { SignInOauthButton } from "@/components/auth/sign-in-oauth-button"
-import { MagicLinkLoginForm } from "@/components/auth/magic-link-login-form"
-import Link from "next/link"
+} from "@/components/ui/field";
+import { Input } from "@/components/ui/input";
+import { SignInOauthButton } from "@/components/auth/sign-in-oauth-button";
+import { MagicLinkLoginForm } from "@/components/auth/magic-link-login-form";
+import Link from "next/link";
 
 export function LoginForm({
   className,
@@ -27,11 +27,16 @@ export function LoginForm({
             Enter your email below to login to your account
           </p>
         </div>
-        
+
         <form {...props}>
           <Field>
             <FieldLabel htmlFor="email">Email</FieldLabel>
-            <Input id="email" type="email" placeholder="m@example.com" required />
+            <Input
+              id="email"
+              type="email"
+              placeholder="m@example.com"
+              required
+            />
           </Field>
           <Field>
             <div className="flex items-center">
@@ -46,30 +51,35 @@ export function LoginForm({
             <Input id="password" type="password" required />
           </Field>
           <Field className="pt-2">
-            <Button type="submit" className="w-full">Login</Button>
+            <Button type="submit" className="w-full">
+              Login
+            </Button>
           </Field>
         </form>
-        
+
         <FieldSeparator>Or continue with</FieldSeparator>
-        
+
         <Field>
           <div className="grid grid-cols-2 gap-2">
             <SignInOauthButton provider="github" />
             <SignInOauthButton provider="google" />
           </div>
         </Field>
-        
+
         <MagicLinkLoginForm />
-        
+
         <Field>
           <FieldDescription className="text-center">
             Don&apos;t have an account?{" "}
-            <Link href="/auth/register" className="underline underline-offset-4">
+            <Link
+              href="/auth/register"
+              className="underline underline-offset-4"
+            >
               Sign up
             </Link>
           </FieldDescription>
         </Field>
       </FieldGroup>
     </div>
-  )
+  );
 }

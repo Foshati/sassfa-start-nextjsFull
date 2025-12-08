@@ -1,7 +1,7 @@
-import { auth } from './auth';
-import { headers } from 'next/headers';
-import { cache } from 'react';
-import { redirect } from 'next/navigation';
+import { auth } from "./auth";
+import { headers } from "next/headers";
+import { cache } from "react";
+import { redirect } from "next/navigation";
 
 // ✅ getSession() - Returns session only (null or session)
 // Use case: When you want conditional rendering
@@ -11,7 +11,7 @@ export const getSession = cache(async () => {
       headers: await headers(),
     });
     return session;
-  } catch  {
+  } catch {
     return null;
   }
 });
@@ -22,7 +22,7 @@ export async function requireAuth() {
   const session = await getSession();
 
   if (!session?.user) {
-    redirect('/sign-in');
+    redirect("/sign-in");
   }
 
   return session;
@@ -33,7 +33,7 @@ export async function requireRole(allowedRoles: string[]) {
   const session = await requireAuth();
 
   if (!session.user.role || !allowedRoles.includes(session.user.role)) {
-    redirect('/unauthorized');
+    redirect("/unauthorized");
   }
 
   return session;

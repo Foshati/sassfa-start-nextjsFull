@@ -19,7 +19,7 @@ import {
   Settings,
   ChevronRight,
   Check,
-  X
+  X,
 } from "lucide-react";
 
 export default async function Page() {
@@ -45,32 +45,32 @@ export default async function Page() {
       label: "Home",
       href: "/",
       icon: Home,
-      section: "overview"
+      section: "overview",
     },
     {
       label: "Profile Information",
       href: "#profile",
       icon: User,
-      section: "profile"
+      section: "profile",
     },
     {
       label: "Permissions",
       href: "#permissions",
       icon: Shield,
-      section: "permissions"
+      section: "permissions",
     },
     {
       label: "Update Profile",
       href: "#update",
       icon: Settings,
-      section: "update"
+      section: "update",
     },
     {
       label: "Change Password",
       href: "#password",
       icon: Lock,
-      section: "password"
-    }
+      section: "password",
+    },
   ];
 
   return (
@@ -104,8 +104,12 @@ export default async function Page() {
                   </div>
                 )}
                 <div className="flex-1 min-w-0">
-                  <p className="font-semibold text-base truncate">{session.user.name}</p>
-                  <p className="text-xs text-muted-foreground truncate">{session.user.email}</p>
+                  <p className="font-semibold text-base truncate">
+                    {session.user.name}
+                  </p>
+                  <p className="text-xs text-muted-foreground truncate">
+                    {session.user.email}
+                  </p>
                   <Badge variant="secondary" className="mt-1 text-xs">
                     {session.user.role}
                   </Badge>
@@ -130,7 +134,9 @@ export default async function Page() {
                 >
                   <Link href={item.href}>
                     <item.icon className="h-4 w-4 shrink-0 group-hover:scale-110 transition-transform" />
-                    <span className="flex-1 text-left font-medium">{item.label}</span>
+                    <span className="flex-1 text-left font-medium">
+                      {item.label}
+                    </span>
                     <ChevronRight className="h-4 w-4 shrink-0 opacity-0 group-hover:opacity-100 transition-opacity" />
                   </Link>
                 </Button>
@@ -151,7 +157,9 @@ export default async function Page() {
                   >
                     <Link href="/admin/dashboard">
                       <Shield className="h-4 w-4 shrink-0 group-hover:scale-110 transition-transform" />
-                      <span className="flex-1 text-left font-medium">Admin Dashboard</span>
+                      <span className="flex-1 text-left font-medium">
+                        Admin Dashboard
+                      </span>
                       <ChevronRight className="h-4 w-4 shrink-0 opacity-0 group-hover:opacity-100 transition-opacity" />
                     </Link>
                   </Button>
@@ -188,7 +196,10 @@ export default async function Page() {
             </div>
 
             {/* Profile Info Card */}
-            <div id="profile" className="bg-white p-8 rounded-xl shadow-sm border hover:shadow-md transition-shadow">
+            <div
+              id="profile"
+              className="bg-white p-8 rounded-xl shadow-sm border hover:shadow-md transition-shadow"
+            >
               <div className="flex items-start gap-6">
                 {session.user.image ? (
                   <Image
@@ -207,7 +218,9 @@ export default async function Page() {
                 )}
                 <div className="flex-1">
                   <h2 className="text-2xl font-bold">{session.user.name}</h2>
-                  <p className="text-muted-foreground mt-1">{session.user.email}</p>
+                  <p className="text-muted-foreground mt-1">
+                    {session.user.email}
+                  </p>
                   <div className="flex items-center gap-3 mt-3">
                     <Badge variant="outline" className="font-normal">
                       Role: {session.user.role}
@@ -222,14 +235,19 @@ export default async function Page() {
             </div>
 
             {/* Permissions Card */}
-            <div id="permissions" className="bg-white p-8 rounded-xl shadow-sm border hover:shadow-md transition-shadow">
+            <div
+              id="permissions"
+              className="bg-white p-8 rounded-xl shadow-sm border hover:shadow-md transition-shadow"
+            >
               <div className="flex items-center gap-3 mb-6">
                 <div className="size-10 rounded-lg bg-primary/10 flex items-center justify-center">
                   <Shield className="h-5 w-5 text-primary" />
                 </div>
                 <div>
                   <h3 className="text-xl font-semibold">Access Permissions</h3>
-                  <p className="text-sm text-muted-foreground">Your current access level and permissions</p>
+                  <p className="text-sm text-muted-foreground">
+                    Your current access level and permissions
+                  </p>
                 </div>
               </div>
 
@@ -240,20 +258,32 @@ export default async function Page() {
                       <Check className="h-4 w-4 text-green-600" />
                     </div>
                     <div>
-                      <span className="font-semibold text-green-900">Manage Own Posts</span>
-                      <p className="text-xs text-green-700 mt-0.5">Create, edit and delete your own posts</p>
+                      <span className="font-semibold text-green-900">
+                        Manage Own Posts
+                      </span>
+                      <p className="text-xs text-green-700 mt-0.5">
+                        Create, edit and delete your own posts
+                      </p>
                     </div>
                   </div>
                   <Badge className="bg-green-600">Enabled</Badge>
                 </div>
 
-                <div className={`flex items-center justify-between p-4 rounded-lg border-2 transition-colors ${FULL_POST_ACCESS.success
-                  ? "bg-green-50 border-green-200 hover:border-green-300"
-                  : "bg-gray-50 border-gray-200 hover:border-gray-300"
-                  }`}>
+                <div
+                  className={`flex items-center justify-between p-4 rounded-lg border-2 transition-colors ${
+                    FULL_POST_ACCESS.success
+                      ? "bg-green-50 border-green-200 hover:border-green-300"
+                      : "bg-gray-50 border-gray-200 hover:border-gray-300"
+                  }`}
+                >
                   <div className="flex items-center gap-3">
-                    <div className={`size-8 rounded-full flex items-center justify-center ${FULL_POST_ACCESS.success ? "bg-green-100" : "bg-gray-100"
-                      }`}>
+                    <div
+                      className={`size-8 rounded-full flex items-center justify-center ${
+                        FULL_POST_ACCESS.success
+                          ? "bg-green-100"
+                          : "bg-gray-100"
+                      }`}
+                    >
                       {FULL_POST_ACCESS.success ? (
                         <Check className="h-4 w-4 text-green-600" />
                       ) : (
@@ -261,19 +291,30 @@ export default async function Page() {
                       )}
                     </div>
                     <div>
-                      <span className={`font-semibold ${FULL_POST_ACCESS.success ? "text-green-900" : "text-gray-900"
-                        }`}>
+                      <span
+                        className={`font-semibold ${
+                          FULL_POST_ACCESS.success
+                            ? "text-green-900"
+                            : "text-gray-900"
+                        }`}
+                      >
                         Manage All Posts
                       </span>
-                      <p className={`text-xs mt-0.5 ${FULL_POST_ACCESS.success ? "text-green-700" : "text-gray-500"
-                        }`}>
+                      <p
+                        className={`text-xs mt-0.5 ${
+                          FULL_POST_ACCESS.success
+                            ? "text-green-700"
+                            : "text-gray-500"
+                        }`}
+                      >
                         Full access to manage all posts in the system
                       </p>
                     </div>
                   </div>
-                  <Badge variant={FULL_POST_ACCESS.success ? "default" : "secondary"} className={
-                    FULL_POST_ACCESS.success ? "bg-green-600" : ""
-                  }>
+                  <Badge
+                    variant={FULL_POST_ACCESS.success ? "default" : "secondary"}
+                    className={FULL_POST_ACCESS.success ? "bg-green-600" : ""}
+                  >
                     {FULL_POST_ACCESS.success ? "Enabled" : "Disabled"}
                   </Badge>
                 </div>
@@ -281,14 +322,19 @@ export default async function Page() {
             </div>
 
             {/* Update Profile Card */}
-            <div id="update" className="bg-white p-8 rounded-xl shadow-sm border hover:shadow-md transition-shadow">
+            <div
+              id="update"
+              className="bg-white p-8 rounded-xl shadow-sm border hover:shadow-md transition-shadow"
+            >
               <div className="flex items-center gap-3 mb-6">
                 <div className="size-10 rounded-lg bg-blue-50 flex items-center justify-center">
                   <Settings className="h-5 w-5 text-blue-600" />
                 </div>
                 <div>
                   <h3 className="text-xl font-semibold">Update Profile</h3>
-                  <p className="text-sm text-muted-foreground">Change your name and profile picture</p>
+                  <p className="text-sm text-muted-foreground">
+                    Change your name and profile picture
+                  </p>
                 </div>
               </div>
               <UpdateUserForm
@@ -298,14 +344,21 @@ export default async function Page() {
             </div>
 
             {/* Change Password Card */}
-            <div id="password" className="bg-gradient-to-br from-red-50 to-orange-50 p-8 rounded-xl shadow-sm border-2 border-red-200 hover:shadow-md transition-shadow">
+            <div
+              id="password"
+              className="bg-gradient-to-br from-red-50 to-orange-50 p-8 rounded-xl shadow-sm border-2 border-red-200 hover:shadow-md transition-shadow"
+            >
               <div className="flex items-center gap-3 mb-6">
                 <div className="size-10 rounded-lg bg-red-100 flex items-center justify-center">
                   <Lock className="h-5 w-5 text-red-600" />
                 </div>
                 <div>
-                  <h3 className="text-xl font-semibold text-red-900">Change Password</h3>
-                  <p className="text-sm text-red-700">Update your password to keep your account secure</p>
+                  <h3 className="text-xl font-semibold text-red-900">
+                    Change Password
+                  </h3>
+                  <p className="text-sm text-red-700">
+                    Update your password to keep your account secure
+                  </p>
                 </div>
               </div>
               <ChangePasswordForm />

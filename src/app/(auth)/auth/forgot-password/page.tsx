@@ -1,5 +1,5 @@
-import { GalleryVerticalEnd } from "lucide-react"
-import { ForgotPasswordForm } from "@/components/forgot-password-form"
+import { GalleryVerticalEnd } from "lucide-react";
+import { ForgotPasswordForm } from "@/components/forgot-password-form";
 
 export default function ForgotPasswordPage() {
   return (
@@ -27,5 +27,5 @@ export default function ForgotPasswordPage() {
         />
       </div>
     </div>
-  )
+  );
 }
