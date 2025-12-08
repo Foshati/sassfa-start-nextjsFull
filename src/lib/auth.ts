@@ -4,11 +4,11 @@ import { prismaAdapter } from "better-auth/adapters/prisma";
 import { createAuthMiddleware, APIError } from "better-auth/api";
 import { admin, customSession, magicLink } from "better-auth/plugins";
 
-import { prisma } from "@/lib/prisma";
 import { hashPassword, verifyPassword } from "@/lib/argon2";
 import { normalizeName, VALID_DOMAINS } from "@/lib/utils";
 import { ac, roles } from "@/lib/permissions";
 import { sendEmailAction } from "@/actions/send-email.action";
+import prisma from "./prisma";
 
 const options = {
   database: prismaAdapter(prisma, {
