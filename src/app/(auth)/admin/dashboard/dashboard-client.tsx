@@ -180,15 +180,17 @@ function RoleBadge({ role }: { role: UserRole }) {
 
 // User Row Actions Dropdown
 function UserActions({ 
+  userId,
   role, 
   disabled,
   onDelete,
   onRoleChange,
 }: { 
+  userId: string;
   role: UserRole;
   disabled: boolean;
-  onDelete: () => void;
-  onRoleChange: (newRole: UserRole) => void;
+  onDelete: () => void | Promise<void>;
+  onRoleChange: (newRole: UserRole) => void | Promise<void>;
 }) {
   return (
     <DropdownMenu>

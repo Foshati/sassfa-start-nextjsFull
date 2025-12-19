@@ -65,7 +65,9 @@ export default function ResetPasswordPage({ searchParams }: ResetPasswordPagePro
       fetchOptions: {
         onRequest: () => setIsPending(true),
         onResponse: () => setIsPending(false),
-        onError: (ctx) => toast.error(ctx.error.message),
+        onError: (ctx) => {
+          toast.error(ctx.error.message);
+        },
         onSuccess: () => {
           setIsSuccess(true);
           toast.success("Password reset successfully!");
