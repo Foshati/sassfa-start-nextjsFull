@@ -51,7 +51,7 @@ export default function LoginPage() {
       fetchOptions: {
         onRequest: () => setIsMagicLinkPending(true),
         onResponse: () => setIsMagicLinkPending(false),
-        onError: (ctx) => toast.error(ctx.error.message),
+        onError: (ctx) => { toast.error(ctx.error.message) },
         onSuccess: () => {
           toast.success("Check your email for the magic link!");
           setShowMagicLink(false);
