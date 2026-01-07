@@ -25,7 +25,7 @@ import {
   Bell,
   CreditCard,
   HelpCircle,
-  Sparkles,
+
   Zap,
   Crown,
   LayoutDashboard,
@@ -61,7 +61,7 @@ export default async function ProfilePage() {
             <Link href="/" className="flex items-center gap-3 group">
               <div className="relative">
                 <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-linear-to-br from-violet-600 to-purple-600 shadow-lg shadow-violet-500/30 group-hover:shadow-violet-500/50 transition-all">
-                  <Sparkles className="h-5 w-5 text-white" />
+                  <span className="text-xl font-bold text-white">S</span>
                 </div>
                 <div className="absolute -top-1 -right-1 h-3 w-3 rounded-full bg-emerald-500 border-2 border-white dark:border-gray-900" />
               </div>

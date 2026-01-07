@@ -5,7 +5,7 @@ import { useState } from "react";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
 import { toast } from "sonner";
-import { Sparkles, Mail, Lock, User, ArrowRight, Github, Loader2, CheckCircle2 } from "lucide-react";
+import { Mail, Lock, User, ArrowRight, Github, Loader2, CheckCircle2 } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -86,7 +86,7 @@ export default function RegisterPage() {
         
         <div className="relative z-10 flex flex-col justify-center items-center p-12 text-white">
           <div className="mb-8 p-4 bg-white/10 backdrop-blur-sm rounded-2xl">
-            <Sparkles className="w-12 h-12" />
+            <span className="text-5xl font-bold">S</span>
           </div>
           <h1 className="text-4xl font-bold mb-4 text-center">Join Us Today!</h1>
           <p className="text-lg text-white/80 text-center max-w-md mb-8">
@@ -110,7 +110,7 @@ export default function RegisterPage() {
           {/* Logo - Mobile */}
           <div className="lg:hidden flex justify-center mb-8">
             <div className="p-3 bg-gradient-to-br from-emerald-500 to-teal-500 rounded-xl shadow-lg">
-              <Sparkles className="w-8 h-8 text-white" />
+              <span className="text-3xl font-bold text-white">S</span>
             </div>
           </div>
 

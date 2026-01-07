@@ -1,6 +1,6 @@
 "use client";
 
-import type { UserRole } from "../../../prisma/generated/prisma/client";
+import type { UserRole } from "../../../prisma/generated/client";
 import { admin } from "@/lib/auth-client";
 import { useRouter } from "next/navigation";
 import { useState } from "react";

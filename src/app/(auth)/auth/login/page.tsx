@@ -4,7 +4,7 @@ import { useState } from "react";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
 import { toast } from "sonner";
-import { Sparkles, Mail, Lock, ArrowRight, Github, Loader2 } from "lucide-react";
+import { Mail, Lock, ArrowRight, Github, Loader2, Wand2 } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -79,7 +79,7 @@ export default function LoginPage() {
         
         <div className="relative z-10 flex flex-col justify-center items-center p-12 text-white">
           <div className="mb-8 p-4 bg-white/10 backdrop-blur-sm rounded-2xl">
-            <Sparkles className="w-12 h-12" />
+            <span className="text-5xl font-bold">S</span>
           </div>
           <h1 className="text-4xl font-bold mb-4 text-center">Welcome Back!</h1>
           <p className="text-lg text-white/80 text-center max-w-md">
@@ -100,7 +100,7 @@ export default function LoginPage() {
           {/* Logo - Mobile */}
           <div className="lg:hidden flex justify-center mb-8">
             <div className="p-3 bg-gradient-to-br from-violet-600 to-purple-600 rounded-xl shadow-lg">
-              <Sparkles className="w-8 h-8 text-white" />
+              <span className="text-3xl font-bold text-white">S</span>
             </div>
           </div>
 
@@ -213,7 +213,7 @@ export default function LoginPage() {
               onClick={() => setShowMagicLink(!showMagicLink)}
               className="w-full flex items-center justify-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors"
             >
-              <Sparkles className="w-4 h-4" />
+              <Wand2 className="w-4 h-4" />
               {showMagicLink ? "Hide magic link" : "Sign in with magic link"}
             </button>
             
