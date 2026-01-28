@@ -17,9 +17,9 @@ import {
 import {
   Dialog,
   DialogContent,
-  DialogHeader,
   DialogTitle,
 } from "@/components/ui/dialog";
+import { VisuallyHidden } from "@/components/ui/visually-hidden";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Button } from "@/components/ui/button";
@@ -69,6 +69,11 @@ export function UserButton({ user }: UserButtonProps) {
       {/* Profile Modal */}
       <Dialog open={open} onOpenChange={setOpen}>
         <DialogContent className="sm:max-w-[480px] p-0 gap-0 overflow-hidden">
+          {/* Hidden title for accessibility */}
+          <VisuallyHidden>
+            <DialogTitle>User Profile</DialogTitle>
+          </VisuallyHidden>
+          
           {/* Header with gradient */}
           <div className="relative h-24 bg-gradient-to-r from-violet-600 via-purple-600 to-indigo-600">
             <div className="absolute inset-0 bg-[linear-gradient(45deg,transparent_25%,rgba(255,255,255,0.1)_50%,transparent_75%)] bg-[length:250%_250%]" />
