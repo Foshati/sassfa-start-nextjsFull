@@ -2,6 +2,7 @@
 
 import { Button } from "@/components/ui/button";
 import { useSession } from "@/lib/auth-client";
+import { UserButton } from "@/components/auth/user-button";
 import Link from "next/link";
 
 export const GetStartedButton = () => {
@@ -9,29 +10,37 @@ export const GetStartedButton = () => {
 
   if (isPending) {
     return (
-      <Button size="lg" className="opacity-50" asChild>
-        <span>Get Started</span>
+      <Button size="lg" className="opacity-50" disabled>
+        Get Started
       </Button>
     );
   }
 
-  const href = session ? "/profile" : "/auth/login";
+  // If user is logged in, show UserButton
+  if (session) {
+    return (
+      <div className="flex items-center gap-3">
+        <span className="text-sm text-muted-foreground hidden sm:inline">
+          Welcome, {session.user.name.split(" ")[0]}! 
+        </span>
+        <UserButton 
+          user={{
+            id: session.user.id,
+            name: session.user.name,
+            email: session.user.email,
+            image: session.user.image,
+            role: session.user.role as string,
+            emailVerified: session.user.emailVerified,
+          }} 
+        />
+      </div>
+    );
+  }
 
+  // If not logged in, show Get Started button
   return (
-    <div className="flex flex-col items-center gap-4">
-      <Button size="lg" asChild>
-        <Link href={href}>Get Started</Link>
-      </Button>
-
-      {session && (
-        <p className="flex items-center gap-2">
-          <span
-            data-role={session.user.role}
-            className="size-4 rounded-full animate-pulse data-[role=USER]:bg-blue-600 data-[role=ADMIN]:bg-red-600"
-          />
-          Welcome back, {session.user.name}! 👋
-        </p>
-      )}
-    </div>
+    <Button size="lg" asChild>
+      <Link href="/auth/login">Get Started</Link>
+    </Button>
   );
 };
