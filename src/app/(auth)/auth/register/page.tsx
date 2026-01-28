@@ -43,7 +43,7 @@ export default function RegisterPage() {
         email,
         password,
         name,
-        callbackURL: "/profile",
+        callbackURL: "/",
         fetchOptions: {
           onError: (ctx) => {
             toast.error(ctx.error.message);
@@ -51,7 +51,7 @@ export default function RegisterPage() {
           },
           onSuccess: () => {
             toast.success("Account created! Welcome aboard!");
-            router.push("/profile");
+            router.push("/");
           },
         },
       });
@@ -64,7 +64,7 @@ export default function RegisterPage() {
   async function handleOAuth(provider: "github" | "google") {
     await signIn.social({
       provider,
-      callbackURL: "/profile",
+      callbackURL: "/",
       errorCallbackURL: "/auth/login/error",
     });
   }

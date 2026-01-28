@@ -22,7 +22,7 @@ export const MagicLinkLoginForm = () => {
     await signIn.magicLink({
       email,
       name: email.split("@")[0],
-      callbackURL: "/profile",
+      callbackURL: "/",
       fetchOptions: {
         onRequest: () => {
           setIsPending(true);

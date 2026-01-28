@@ -65,8 +65,8 @@ export default async function AdminDashboardPage() {
                   size="lg"
                   className="w-full h-12 bg-gradient-to-r from-violet-600 to-purple-600 hover:from-violet-700 hover:to-purple-700 text-white font-semibold rounded-xl shadow-lg shadow-violet-500/30 transition-all hover:scale-[1.02]"
                 >
-                  <Link href="/profile">
-                    Go to Profile
+                  <Link href="/">
+                    Go to Home
                   </Link>
                 </Button>
                 <Button

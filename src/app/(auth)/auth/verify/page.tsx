@@ -9,7 +9,7 @@ interface PageProps {
 export default async function Page({ searchParams }: PageProps) {
   const error = (await searchParams).error;
 
-  if (!error) redirect("/profile");
+  if (!error) redirect("/");
 
   return (
     <div className="px-8 py-16 container mx-auto max-w-5xl space-y-8">

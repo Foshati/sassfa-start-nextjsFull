@@ -506,7 +506,7 @@ export function DashboardClient({
               Menu
             </p>
             <NavItem href="/admin/dashboard" icon={LayoutDashboard} label="Dashboard" active />
-            <NavItem href="/profile" icon={Settings} label="Profile Settings" />
+            <NavItem href="/" icon={Settings} label="Home" />
             <NavItem href="/" icon={Home} label="Back to Home" />
           </nav>
 

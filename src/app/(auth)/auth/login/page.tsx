@@ -30,7 +30,7 @@ export default function LoginPage() {
       setIsPending(false);
     } else {
       toast.success("Welcome back! Redirecting...");
-      router.push("/profile");
+      router.push("/");
     }
   }
 
@@ -47,7 +47,7 @@ export default function LoginPage() {
     await signIn.magicLink({
       email,
       name: email.split("@")[0],
-      callbackURL: "/profile",
+      callbackURL: "/",
       fetchOptions: {
         onRequest: () => setIsMagicLinkPending(true),
         onResponse: () => setIsMagicLinkPending(false),
@@ -63,7 +63,7 @@ export default function LoginPage() {
   async function handleOAuth(provider: "github" | "google") {
     await signIn.social({
       provider,
-      callbackURL: "/profile",
+      callbackURL: "/",
       errorCallbackURL: "/auth/login/error",
     });
   }

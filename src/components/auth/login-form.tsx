@@ -28,7 +28,7 @@ export const LoginForm = () => {
       setIsPending(false);
     } else {
       toast.success("Login successful. Good to have you back.");
-      router.push("/profile");
+      router.push("/");
     }
   }
 

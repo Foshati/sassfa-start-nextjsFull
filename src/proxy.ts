@@ -1,7 +1,7 @@
 import { type NextRequest, NextResponse } from "next/server";
 import { getSessionCookie } from "better-auth/cookies";
 
-const protectedRoutes = ["/profile", "/admin/dashboard"];
+const protectedRoutes = ["/admin/dashboard"];
 
 export async function proxy(req: NextRequest) {
   const { nextUrl } = req;
@@ -21,7 +21,7 @@ export async function proxy(req: NextRequest) {
     if (nextUrl.searchParams.get("error")) {
       return res;
     }
-    return NextResponse.redirect(new URL("/profile", req.url));
+    return NextResponse.redirect(new URL("/", req.url));
   }
 
   return res;
